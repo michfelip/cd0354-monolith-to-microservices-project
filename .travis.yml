@@ -5,6 +5,11 @@ language: node_js
 node_js:
   - 13
 
+branches:
+only:
+  - master
+  - dev
+
 services:
   - docker
 
@@ -19,21 +24,21 @@ before_script:
 ## Build
 script:
   - docker --version # print the version for logging
-  - docker build -t udagram-api-feed ./project/udagram-api-feed
-  - docker build -t udagram-api-user ./project/udagram-api-user
-  - docker build -t udagram-frontend ./project/udagram-frontend
-  - docker build -t udagram-reverseproxy ./project/udagram-reverseproxy
+  - docker build -t udagram-api-feed -f udagram-api-feed/Dockerfile ./project/udagram-api-feed
+  - docker build -t udagram-api-user -f udagram-api-user/Dockerfile ./project/udagram-api-user
+  - docker build -t udagram-frontend -f udagram-frontend/Dockerfile ./project/udagram-frontend
+  - docker build -t udagram-reverseproxy -f udagram-reverseproxy/Dockerfile ./project/udagram-reverseproxy
 ## Tagging
-  - docker tag udagram-api-feed michfelip/udagram-api-feed:v1
-  - docker tag udagram-api-user michfelip/udagram-api-user:v1
-  - docker tag udagram-frontend michfelip/udagram-frontend:v1
-  - docker tag udagram-reverseproxy michfelip/udagram-reverseproxy:v1
+  - docker tag udagram-api-feed michfelip/udagram-api-feed:latest
+  - docker tag udagram-api-user michfelip/udagram-api-user:latest
+  - docker tag udagram-frontend michfelip/udagram-frontend:latest
+  - docker tag udagram-reverseproxy michfelip/udagram-reverseproxy:latest
 
 ## Push
 ## Assuming DOCKER_PASSWORD and DOCKER_USERNAME are set in the Travis repository settings
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push michfelip/udagram-api-feed:v1
-  - docker push michfelip/udagram-api-user:v1
-  - docker push michfelip/udagram-frontend:v1
-  - docker push michfelip/udagram-reverseproxy:v1
+  - docker push michfelip/udagram-api-feed:latest
+  - docker push michfelip/udagram-api-user:latest
+  - docker push michfelip/udagram-frontend:latest
+  - docker push michfelip/udagram-reverseproxy:latest
