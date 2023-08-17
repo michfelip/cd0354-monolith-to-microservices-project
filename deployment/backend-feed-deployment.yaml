@@ -18,6 +18,13 @@ spec:
       - name: backend-feed
         image: michfelip/udagram-api-feed
         imagePullPolicy: Always
+        resources:
+          limits:
+            cpu: 500m
+            memory: 1024Mi
+          requests:
+            cpu: 250m
+            memory: 64mi
         env:
           - name: URL
             valueFrom:

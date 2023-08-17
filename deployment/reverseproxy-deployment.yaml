@@ -18,6 +18,13 @@ spec:
       - name: reverseproxy
         image: michfelip/udagram-reverseproxy
         imagePullPolicy: Always
+        resources:
+          limits:
+            cpu: 500m
+            memory: 1024Mi
+          requests:
+            cpu: 250m
+            memory: 64mi
         ports:
         - containerPort: 8080
         env:
