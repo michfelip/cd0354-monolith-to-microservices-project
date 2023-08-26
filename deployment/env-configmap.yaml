@@ -3,11 +3,11 @@ kind: ConfigMap
 metadata:
   name: env-configmap
 data:
-  AWS_BUCKET: arn:aws:s3:::udagram-felipe-dev
+  AWS_BUCKET: arn:aws:s3:::udagramfelipedev
   AWS_REGION: us-east-2
   AWS_PROFILE: default
   JWT_SECRET: testing
   URL: http://localhost:8100
   NODE_OPTIONS: --openssl-legacy-provider
-  POSTGRES_HOST: udagram-felipe-dev.crjm1ptab0tn.us-east-2.rds.amazonaws.com
+  POSTGRES_HOST: udagramfelipedev.cn2sbnzjfxzp.us-east-2.rds.amazonaws.com
   POSTGRES_DB: postgres
