@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: reverseproxy
-        image: michfelip/udagram-reverseproxy:vFinal3
+        image: michfelip/udagram-reverseproxy:vFinal4
         imagePullPolicy: Always
         resources:
           limits:
