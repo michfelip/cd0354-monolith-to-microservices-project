@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: reverseproxy
   labels:
-    service: reverseproxy
+    app: reverseproxy
 spec:
   replicas: 2
   selector: 
@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: reverseproxy
-        image: michfelip/udagram-reverseproxy:vFinal6
+        image: michfelip/udagram-reverseproxy:vFinal7
         imagePullPolicy: Always
         resources:
           requests:

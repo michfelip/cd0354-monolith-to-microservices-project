@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: frontend
   labels:
-    service: frontend
+    app: frontend
 spec:
   replicas: 2
   selector: 
@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: michfelip/udagram-frontend:vFinal6
+        image: michfelip/udagram-frontend:vFinal7
         imagePullPolicy: Always
         resources:
           requests:
