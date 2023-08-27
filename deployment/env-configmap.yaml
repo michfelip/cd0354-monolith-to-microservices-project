@@ -7,7 +7,7 @@ data:
   AWS_REGION: us-east-2
   AWS_PROFILE: default
   JWT_SECRET: testing
-  URL: http://localhost:8100
+  URL: http://aa3c0c804de8c412b8704aa6d5ee38c6-1037611097.us-east-2.elb.amazonaws.com
   NODE_OPTIONS: --openssl-legacy-provider
   POSTGRES_HOST: udagramfelipedev.cn2sbnzjfxzp.us-east-2.rds.amazonaws.com
   POSTGRES_DB: postgres
